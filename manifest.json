@@ -1,14 +1,14 @@
 {
     "manifest_version": 2,
-    "name": "nazeka",
-    "version": "0.4.7",
-    "author": "Wareya",
-    "homepage_url": "https://github.com/wareya/nazeka",
-    "description": "A rikai replacement.",
+    "name": "nazeka-ltrcao",
+    "version": "0.4.7.1",
+    "author": "Wareya, ltrcao",
+    "homepage_url": "https://github.com/ltrcao/nazeka",
+    "description": "A rikai replacement, with ltrcao's customizations. Original repo: https://github.com/wareya/nazeka",
 
     "applications": {
         "gecko": {
-            "id": "nazeka@wareya.moe",
+            "id": "nazeka@ltrcao",
             "strict_min_version": "57.0"
         }
     },
