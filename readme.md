@@ -1,20 +1,35 @@
-Nazeka is a rikai replacement.
-
-Nazeka was the first nontrivial thing I wrote in Javascript. The code is terrible and a lot of it is bundled into a small number of files. I need help splitting it up into multiple files, or being told how to split it up into multiple first without requiring any build tools.
-
-***Nazeka is ready for general testing; it's still missing a few behaviors from rikaisama, and it's still clunky, but it's close to complete.***
+This is a fork of [Nazeka](https://github.com/wareya/nazeka).
 
 # Settings
 
-See the [tutorial](https://github.com/wareya/nazeka/blob/master/tutorial.md#settings).
+See the [tutorial](https://github.com/ltrcao/nazeka/blob/master/tutorial.md#settings).
 
 # Building
 
 Build process requires python and lxml, or an existing copy of the extension to rip JMdict#.json from.
 
 - Download JMdict.gz from http://www.edrdg.org/jmdict/edict_doc.html
+```bash
+curl http://ftp.monash.edu/pub/nihongo/JMdict.gz | gunzip > etc/JMdict
+```
 - Convert it to json with etc/process.py
+    -  Ensure python and lxml are installed, e.g. depending on your Linux distro, something like
+```bash
+sudo apt update
+sudo apt install python3 python3-pip
+pip install --user --upgrade pip
+pip install --user lxml
+```
+    - Invoke process.py, after JMdict has been extracted into etc/
+```bash
+cd etc
+./process.py
+```
 - Move the output to under dict/ so that [...]/dict/JMdict1.json and others exist in that location relative to [...]/manifest.json
+    - Basically, after the above commands:
+```bash
+mv JMdict*.json ../dict
+```
 - Make sure every .json file is listed as available to the extension in manifest.json - if jmdict added a lot of words, there might be more than 11 files now
 - Package as an extension for your browser of choice, or load it as a temporary/indev extension using your browser's development tools
 
