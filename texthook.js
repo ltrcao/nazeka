@@ -1231,7 +1231,7 @@ function build_div_kanji(text, kanjidata, moreText, index)
     
     let readings = document.createElement("div");
     let readings_header = document.createElement("div");
-    readings_header.textContent = "Jouyou readings:";
+    readings_header.textContent = "Readings:";
     readings.appendChild(readings_header);
     
     let added_readings = 0;
@@ -1288,6 +1288,7 @@ function build_div_kanji(text, kanjidata, moreText, index)
         reading_div.innerText = kanjidata["vn"];
         vietnamese.appendChild(reading_div);
         readings.appendChild(vietnamese);
+        added_readings += 1;
     }
     
     let composition = document.createElement("div");
