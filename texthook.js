@@ -682,11 +682,11 @@ function build_div_inner(text, result, moreText, index, first_of_many = false)
 
     let original_inner = document.createElement("span");
     original_inner.className = "nazeka_lookup";
-    original_inner.textContent = text;
 
     // the "Looked up XXXX" text
     if(settings.showoriginal)
     {
+        original_inner.textContent = text;
         original_inner.style.fontWeight = "bold";
         original_inner.style.color = `${settings.hlcolor}`;
 
@@ -713,7 +713,6 @@ function build_div_inner(text, result, moreText, index, first_of_many = false)
     }
     else
     {
-        original_inner.style.display = "none";
         if(first_of_many) original_inner.appendChild(buttons);
         temp.appendChild(original_inner);
     }
