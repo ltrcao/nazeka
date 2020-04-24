@@ -20,7 +20,7 @@ sudo apt install python3 python3-pip
 pip install --user --upgrade pip
 pip install --user lxml
 ```
-    - Invoke process.py, after JMdict has been extracted into etc/
+- Invoke process.py, after JMdict has been extracted into etc/
 ```bash
 cd etc
 ./process.py
